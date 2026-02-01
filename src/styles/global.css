@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-neutral-100 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-50;
+  }
+}
+
+@layer utilities {
+  .text-muted {
+    @apply text-neutral-600 dark:text-neutral-400;
+  }
+}

@@ -1,11 +1,35 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Link from "../components/Link.astro";
+import Layout from "../layouts/Layout.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const links = [
+  { title: "github", href: "https://github.com/jadefw" },
+  { title: "twitter ", href: "https://x.com/jondillen" },
+];
 ---
 
 <Layout>
-	<Welcome />
+  <div class="h-full grid place-content-center">
+    <div class="flex flex-col items-center space-y-2">
+      <div>
+        <h1 class="text-3xl text-center">jonas</h1>
+        <p class="mt-1 text-muted text-lg text-center">
+          wannabe web developer from germany. i like football, music &amp; tech.
+          currently studying computer science.
+        </p>
+      </div>
+
+      <ul class="flex gap-2">
+        {
+          links.map((link) => (
+            <li>
+              <Link href={link.href} newTab>
+                {link.title}
+              </Link>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
 </Layout>
