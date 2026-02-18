@@ -1,0 +1,56 @@
+---
+import ArrowRight from "../icons/arrow-right.astro";
+
+const work = [
+  {
+    title: "Safecord",
+    description: "Concept Landing Page design",
+    link: "https://safecord-v2.vercel.app",
+    tools: ["Figma", "NextJS", "Tailwind CSS"],
+  },
+  {
+    title: "Hunsrückpfoten Hundeschule",
+    description: "Website for my mom's dog training school",
+    link: "https://hunsrueckpfoten.de",
+    tools: ["AstroJS", "Tailwind CSS"],
+  },
+  {
+    title: "Parqet Redesign",
+    description: "Voluntarily redesign of the parqet.com website",
+    link: "https://parqet.vercel.app",
+    tools: ["NextJS", "Tailwind CSS"],
+  },
+  {
+    title: "Aura Engineering",
+    description: "Concept Landing Page design for an event engineering company",
+    link: "https://aura-vt.framer.ai",
+    tools: ["Framer", "Figma"],
+  },
+];
+---
+
+<section class="py-8">
+  <h2 class="text-sm font-medium uppercase tracking-widest text-muted mb-8">
+    Work
+  </h2>
+  <div
+    class="flex flex-col divide-y divide-dashed divide-neutral-300 dark:divide-neutral-700 border border-dashed border-neutral-300 dark:border-neutral-700"
+  >
+    {
+      work.map((item) => (
+        <a
+          href={item.link}
+          class="p-6 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors flex justify-between items-center"
+          target="_blank"
+        >
+          <div class="text-wrap">
+            <h3 class="text-lg font-medium mb-1">{item.title}</h3>
+            <p class="text-sm text-muted">{item.description}</p>
+            <p class="mt-2 text-xs text-muted">{item.tools.join(" · ")}</p>
+          </div>
+          <ArrowRight />
+        </a>
+      ))
+    }
+  </div>
+</section>

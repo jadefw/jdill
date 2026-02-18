@@ -1,0 +1,30 @@
+---
+import Link from "./Link.astro";
+
+const links = [
+  {
+    title: "GitHub",
+    href: "https://github.com/jadefw/",
+  },
+  {
+    title: "Twitter",
+    href: "https://x.com/jondillen",
+  },
+];
+---
+
+<section class="py-6">
+  <h1 class="text-3xl">Jonas Dillenkofer</h1>
+  <p class="mt-1 text-muted text-lg">
+    Web developer from germany. I like football, music &amp; tech.
+  </p>
+  <div class="mt-4 flex gap-4">
+    {
+      links.map((link) => (
+        <Link href={link.href} newTab>
+          {link.title}
+        </Link>
+      ))
+    }
+  </div>
+</section>

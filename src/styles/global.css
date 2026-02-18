@@ -1,8 +1,26 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: GeistPixel;
+  src: url("/fonts/GeistPixel-Square.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   body {
     @apply bg-neutral-100 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-50;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "GeistPixel", sans-serif;
+    letter-spacing: -2%;
   }
 }
 

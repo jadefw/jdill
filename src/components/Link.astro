@@ -11,7 +11,10 @@ const { href, className, newTab } = Astro.props as Props;
 
 <a
   href={href}
-  class={cn("hover:underline", Astro.props.className)}
+  class={cn(
+    "hover:underline underline-offset-4 decoration-dashed",
+    Astro.props.className,
+  )}
   target={newTab ? "_blank" : undefined}
   rel={newTab ? "noopener noreferrer" : undefined}
 >
